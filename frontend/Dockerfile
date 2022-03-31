@@ -17,7 +17,7 @@ EXPOSE 24678
 FROM base as dev
 
 RUN echo "starting frontend as development"
-CMD yarn run dev
+CMD yarn dev
 
 
 FROM base as prod
