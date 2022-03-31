@@ -1,0 +1,45 @@
+version: "3.3"
+
+services:
+  vibing_frontend:
+    build:
+      context: ./frontend
+      target: ${APP_ENVIRONMENT}
+      args:
+        - APP_ENV=${APP_ENVIRONMENT}
+    container_name: vibing_frontend
+    restart: always
+    ports:
+      - 7001:7001
+      - 24678:24678
+    networks:
+      - vibing
+    env_file:
+      - .env
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+  vibing_backend:
+    build:
+      context: ./backend
+      target: ${APP_ENVIRONMENT}
+      args:
+        - APP_ENV=${APP_ENVIRONMENT}
+    container_name: vibing_backend
+    restart: always
+    ports:
+      - 9900:9900
+    networks:
+      - vibing
+    env_file:
+      - .env
+    volumes:
+      - ./backend:/app
+
+networks:
+  vibing:
+    external: false
+
+volumes:
+  node_modules:

@@ -1,0 +1,10 @@
+.env
+
+**/node_modules
+assets/build
+/build
+frontend/.svelte-kit
+/package
+
+backend/tmp
+backend/vibing_backend
