@@ -8,6 +8,6 @@ import (
 func main() {
 	router := gin.Default()
 	router.Use(cors.Default())
-	router.GET("/", Index)
+	go router.GET("/", Index)
 	router.Run("0.0.0.0:9900")
 }
