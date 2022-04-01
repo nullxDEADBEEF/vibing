@@ -9,7 +9,16 @@ const config = {
 
   kit: {
     adapter: adapter()
-  }
+  },
+  kit: {
+    vite: {
+      server: {
+        watch: {
+          usePolling: true,
+        },
+      },
+    },
+  },
 };
 
 export default config;

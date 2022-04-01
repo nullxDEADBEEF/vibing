@@ -6,5 +6,6 @@ assets/build
 frontend/.svelte-kit
 /package
 
+/backend/src/tmp
 /backend/tmp
 backend/vibing_backend
